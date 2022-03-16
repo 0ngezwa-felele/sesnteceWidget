@@ -3,20 +3,15 @@ const displayField = document.querySelector(".displayField");
 
 
 
-
-// const hello = Main()
-
-
-
-// var searchBTN = document.getElementById("searchBTN")
 searchBTN.addEventListener("click", () => {
 
+    var sentence = document.getElementById("searching").value;
+    document.getElementById("displayField").innerHTML = sentence;
 
-    
-        var sentence = document.getElementById("searching").value;
-        document.getElementById("displayField").innerHTML = sentence;
-    
- console.log(sentence)
+    var wordLength = sentence.split(" ").length;
+    document.getElementById('counter').innerHTML = wordLength;
+
+    console.log(sentence)
 
 
 })
