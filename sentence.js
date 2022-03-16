@@ -13,24 +13,12 @@ searchBTN.addEventListener("click", () => {
 
     console.log(sentence)
 
-    let highlight = ""
-
- 
-    
-    
-    
-    
-    
-    
-    
-    
+    // highlighting
 
     const highlightedWords = words.map((word) =>
         word.length >= 4 ? `<span class="highlight">${word}</span>` : word
     );
     const joinedWords = highlightedWords.join(' ');
-
-    // sentence.innerHTML = joinedWords;
     document.getElementById("displayField").innerHTML = joinedWords;
 
     console.log(joinedWords);
