@@ -6,10 +6,10 @@ const displayField = document.querySelector(".displayField");
 searchBTN.addEventListener("click", () => {
 
     var sentence = document.getElementById("searching").value;
-    document.getElementById("displayField").innerHTML = sentence;
 
-    const wordLength = sentence.split(" ").length;
-    document.getElementById('counter').innerHTML = wordLength;
+    const words = sentence.split(" ");
+    console.log(words);
+    document.getElementById('counter').innerHTML = words.length;
 
     console.log(sentence)
 
@@ -24,15 +24,15 @@ searchBTN.addEventListener("click", () => {
     
     
     
-    
-    
-    
-    const highlightedWords = wordLength.map((word) =>
+
+    const highlightedWords = words.map((word) =>
         word.length >= 4 ? `<span class="highlight">${word}</span>` : word
     );
     const joinedWords = highlightedWords.join(' ');
 
-    sentence.innerHTML = joinedWords;
+    // sentence.innerHTML = joinedWords;
+    document.getElementById("displayField").innerHTML = joinedWords;
+
     console.log(joinedWords);
 
 
