@@ -26,3 +26,23 @@ searchBTN.addEventListener("click", () => {
 
 
 })
+// Hiding
+var checkbox = document.getElementById('hiding')
+checkbox.addEventListener('change', (shortWords) => {
+
+    var sentence2 = document.getElementById("searching").value;
+
+    const words2 = sentence2.split(" ");
+
+    const highlightedWords = words2.map((word) =>
+        word.length >= 4 ? `<span class="highlight">${word}</span>` : '' //word
+    );
+    
+    const joinedWords = highlightedWords.join(' ');
+    document.getElementById("displayField").innerHTML = joinedWords;
+
+    console.log(joinedWords);
+
+
+    // console.log(shortWords);
+})

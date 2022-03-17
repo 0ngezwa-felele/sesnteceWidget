@@ -1,11 +1,14 @@
 .highlight {
     color: snow;
 }
+.displayField{
+    display: none;
+}
 body{
     background-color:#7A6C5D;
 }
 .container{
-    width: 80%;
+    width: 50%;
     margin:auto;
     align-content: center;
     padding-top: 2em;
