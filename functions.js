@@ -1,4 +1,4 @@
-function Main() {
+const Main = () => {
     const getLongestWord = (words) => {
         var words = document.getElementById("searching").value;
         const longWord = words.split(" ")
@@ -11,16 +11,19 @@ function Main() {
         }
         return longestWord
     }
+    const hiding = sentence2 => {
+        const words2 = sentence2.split(" ")
+        const highlightedWords = words2.map((word) => word.length >= 4 ?
+            `<span class="highlight">${word}</span>` : ''
+        );
+        const joinedWords = highlightedWords.join(' ');
+        return joinedWords
+    }
+
 
     return {
-        getLongestWord
+        getLongestWord,
+        hiding
     }
 
 }
-
-
-// const stringLength = longWord.map(longWord => longWord.length)
-        // const maxLength = Math.max(...stringLength)
-        // var results = longWord.find(longWord => longWord.length === maxLength)
-        // console.log(results);
-        // results.innerHTML = 

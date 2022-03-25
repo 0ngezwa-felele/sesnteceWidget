@@ -7,19 +7,11 @@ const hello = Main()
  * - hide
  */
 
-//  var checkbox2 = document.getElementById('select')
-//  checkbox2.addEventListener('change', () => {
-
-
-
-
-
 searchBTN.addEventListener("click", () => {
 
     var sentence = document.getElementById("searching").value;
 
     const words = sentence.split(" ");
-    console.log(words);
     document.getElementById('counter').innerHTML = words.length;
 
     console.log(sentence)
@@ -29,35 +21,54 @@ searchBTN.addEventListener("click", () => {
     const highlightedWords = words.map((word) =>
         word.length >= 4 ? `<span class="highlight">${word}</span>` : word
     );
-    const joinedWords = highlightedWords.join(' ');
+    let joinedWords = highlightedWords.join(' ');
     document.getElementById("displayField").innerHTML = joinedWords;
 
     console.log(joinedWords);
 
 
 
+
+    const sortedList = [];
+
+    sortedList.push(joinedWords);
+    console.log(sortedList);
+
+    if (localStorage['session'] === undefined) {
+        localStorage.setItem('session', JSON.stringify(joinedWords));
+    } else {
+        joinedWords = JSON.parse(localStorage.getItem('session'))
+    }
+
 })
+
+
+
 // Hiding
-var checkbox = document.getElementById('hiding')
-checkbox.addEventListener('change', () => {
+const hide = ()=> {
+    let checkbox = document.getElementById('hiding').checked;
+    let search = document.querySelector("#searching");
+    console.log(search);
 
-    var sentence2 = document.getElementById("searching").value;
+    if (checkbox) {
+        document.getElementById("displayField").innerHTML = hello.hiding(search.value)
+    } else {
+        document.getElementById("displayField").innerHTML = search.value
+    }
+    console.log(search);
+}
 
-    const words2 = sentence2.split(" ");
+const highlight =()=> {
+    var checkbox2 = document.getElementById('select').checked
+    let highlight = document.querySelector("#searching");
+    // checkbox2.addEventListener('change', () => {
+    // var checkbox2 = document.querySelector("input[name='hide2']:checked");     
+    if(checkbox2){
+        document.getElementById("displayField").innerHTML = `<mark class = "highlight2">${hello.getLongestWord()}<mark/>`    
+    }else{
+        document.getElementById("displayField").innerHTML = highlight.value
+        document.getElementById("searching").value;
+    }
+    
 
-    const highlightedWords = words2.map((word) => word.length >= 4 ? `<span class="highlight">${word}</span>` : '' //word
-    );
-
-    const joinedWords = highlightedWords.join(' ');
-    document.getElementById("displayField").innerHTML = joinedWords;
-
-    console.log(joinedWords);
-
-
-})
-var checkbox2 = document.getElementById('select')
-checkbox2.addEventListener('change', () => {
-    var checkbox2 = document.querySelector("input[name='hide2']:checked");
-    document.getElementById("displayField").innerHTML = `<mark class = "highlight2">${hello.getLongestWord()}<mark/>` 
-    var checkbox2 = document.querySelector("input[name='hide2']");
-})
+}

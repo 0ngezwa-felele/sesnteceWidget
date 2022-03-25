@@ -11,15 +11,26 @@
 
 <body>
     <div class="container">
-        <input type="text" name="searching" id="searching">
+        <div class="textArea">
+            <input type="text" name="searching" id="searching">
+            <button id="searchBTN">Analyse</button>
 
-        <button id="searchBTN">Enter</button>
-        <div id="counter">counter:</div>
+
+        </div>
+        <div class="counting">
+
+
+            <div id="counter">0</div>
+
+
+        </div>
 
         <div id="displayField"></div>
-        <input type="checkbox" name="hide" id="hiding">
+        <input type="checkbox" onclick=hide() name="hide" id="hiding">hide
 
-        <input type="checkbox" name="hide2" id="select">
+        <input type="checkbox" onclick="highlight()" name="hide2" id="select">Highlight
+
+        <button id="show">Last 5 sentences</button>
 
     </div>
 </body>
