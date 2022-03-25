@@ -35,9 +35,9 @@ searchBTN.addEventListener("click", () => {
     console.log(sortedList);
 
     if (localStorage['session'] === undefined) {
-        localStorage.setItem('session', JSON.stringify(joinedWords));
+        localStorage.setItem('session', JSON.stringify(sortedList));
     } else {
-        joinedWords = JSON.parse(localStorage.getItem('session'))
+        sortedList = JSON.parse(localStorage.getItem('session'))
     }
 
 })
@@ -60,9 +60,7 @@ const hide = ()=> {
 
 const highlight =()=> {
     var checkbox2 = document.getElementById('select').checked
-    let highlight = document.querySelector("#searching");
-    // checkbox2.addEventListener('change', () => {
-    // var checkbox2 = document.querySelector("input[name='hide2']:checked");     
+    let highlight = document.querySelector("#searching");   
     if(checkbox2){
         document.getElementById("displayField").innerHTML = `<mark class = "highlight2">${hello.getLongestWord()}<mark/>`    
     }else{

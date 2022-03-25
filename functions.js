@@ -1,4 +1,10 @@
 const Main = () => {
+   
+    
+const adding = ()=>{
+    
+
+}
     const getLongestWord = (words) => {
         var words = document.getElementById("searching").value;
         const longWord = words.split(" ")
