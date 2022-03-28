@@ -1,5 +1,5 @@
 const searching = document.querySelector(".searching");
-const displayField = document.querySelector(".displayField");
+const displayField = document.querySelector("#displayField");
 const hello = Main()
 /**
  * hightlight words > 4
@@ -10,6 +10,9 @@ const hello = Main()
 searchBTN.addEventListener("click", () => {
 
     var sentence = document.getElementById("searching").value;
+    if(searching != ''){
+        displayField.innerHTML = hello.adding(sentence)
+    }
 
     const words = sentence.split(" ");
     document.getElementById('counter').innerHTML = words.length;
@@ -29,7 +32,7 @@ searchBTN.addEventListener("click", () => {
 
 
 
-    const sortedList = [];
+    let sortedList = [];
 
     sortedList.push(joinedWords);
     console.log(sortedList);

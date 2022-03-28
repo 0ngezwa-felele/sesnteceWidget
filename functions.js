@@ -1,9 +1,10 @@
-const Main = () => {
-   
+function Main(){
     
-const adding = ()=>{
+   let arr = []
     
-
+   let adding = sentence =>{
+   arr.push(sentence) 
+   return arr
 }
     const getLongestWord = (words) => {
         var words = document.getElementById("searching").value;
@@ -29,7 +30,8 @@ const adding = ()=>{
 
     return {
         getLongestWord,
-        hiding
+        hiding,
+        adding
     }
 
 }
