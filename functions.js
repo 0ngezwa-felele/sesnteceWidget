@@ -6,6 +6,10 @@ function Main(){
    arr.push(sentence) 
    return arr
 }
+
+let getting = ()=>{
+    return adding
+}
     const getLongestWord = (words) => {
         var words = document.getElementById("searching").value;
         const longWord = words.split(" ")
@@ -21,7 +25,7 @@ function Main(){
     const hiding = sentence2 => {
         const words2 = sentence2.split(" ")
         const highlightedWords = words2.map((word) => word.length >= 4 ?
-            `<span class="highlight">${word}</span>` : ''
+        `<span style="background-color: red">${word}</span>` : ''
         );
         const joinedWords = highlightedWords.join(' ');
         return joinedWords
@@ -31,7 +35,8 @@ function Main(){
     return {
         getLongestWord,
         hiding,
-        adding
+        adding,
+        getting
     }
 
 }

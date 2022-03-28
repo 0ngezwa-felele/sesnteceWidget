@@ -17,31 +17,25 @@ searchBTN.addEventListener("click", () => {
     const words = sentence.split(" ");
     document.getElementById('counter').innerHTML = words.length;
 
-    console.log(sentence)
 
     // highlighting
 
     const highlightedWords = words.map((word) =>
-        word.length >= 4 ? `<span class="highlight">${word}</span>` : word
+        word.length >= 4 ? `<span style="background-color: red">${word}</span>` : word
     );
     let joinedWords = highlightedWords.join(' ');
     document.getElementById("displayField").innerHTML = joinedWords;
 
-    console.log(joinedWords);
 
+    // let sortedList = [];
 
+    // sortedList.push(joinedWords);
 
-
-    let sortedList = [];
-
-    sortedList.push(joinedWords);
-    console.log(sortedList);
-
-    if (localStorage['session'] === undefined) {
-        localStorage.setItem('session', JSON.stringify(sortedList));
-    } else {
-        sortedList = JSON.parse(localStorage.getItem('session'))
-    }
+    // if (localStorage['session'] === undefined) {
+    //     localStorage.setItem('session', JSON.stringify(sortedList));
+    // } else {
+    //     sortedList = JSON.parse(localStorage.getItem('session'))
+    // }
 
 })
 
@@ -51,14 +45,12 @@ searchBTN.addEventListener("click", () => {
 const hide = ()=> {
     let checkbox = document.getElementById('hiding').checked;
     let search = document.querySelector("#searching");
-    console.log(search);
 
     if (checkbox) {
         document.getElementById("displayField").innerHTML = hello.hiding(search.value)
     } else {
         document.getElementById("displayField").innerHTML = search.value
     }
-    console.log(search);
 }
 
 const highlight =()=> {
